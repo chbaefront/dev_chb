@@ -73,6 +73,9 @@ const examples = [
   ['섹션 설명', 'p', '', 'section-heading'],
   ['기술 분류', 'h3', '', 'tech-stack__group'],
   ['기술 태그', 'li', '', 'tech-stack__list'],
+  ['경력 기간', 'p', 'timeline__period'],
+  ['경력 회사명', 'h3', 'timeline__company'],
+  ['경력 팀·역할', 'p', 'timeline__role'],
   ['푸터', 'p', 'site-footer__inner'],
 ];
 
