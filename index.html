@@ -3,25 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
     <title>dev_chb</title>
+    <meta name="description" content="문제를 구조적으로 해결하는 개발자 배창현의 포트폴리오. 프론트엔드 개발, 웹 성능 최적화, 배포 자동화와 E2E 테스트 경험을 소개합니다." />
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="stylesheet" href="./src/styles.css" />
     <script type="module" src="./src/index.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="site-header__inner container">
-        <a class="site-header__title" href="./" aria-label="dev_chb 홈">dev_chb</a>
-        <button class="theme-toggle" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
-          <svg class="theme-toggle__moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20.9 13.1A9 9 0 0 1 10.9 3.1a9 9 0 1 0 10 10Z" />
-          </svg>
-          <svg class="theme-toggle__sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42m0-14.14-1.42 1.42M6.35 17.65l-1.42 1.42" />
-          </svg>
-        </button>
-      </div>
-    </header>
+    <header class="site-header" data-site-header></header>
+    <main class="container portfolio">
+      <section class="introduction" aria-labelledby="intro-title">
+        <p class="introduction__greeting">안녕하세요,</p>
+        <h1 id="intro-title">배창현입니다.</h1>
+        <p class="introduction__role">문제를 구조적으로 해결하는 6년 차 개발자</p>
+        <ul class="introduction__strengths" aria-label="핵심 역량">
+          <li>웹 성능 최적화</li>
+          <li>배포 자동화</li>
+          <li>E2E 테스트</li>
+        </ul>
+        <div class="introduction__description">
+          <p>백엔드로 시작해 프론트엔드로 영역을 넓혀왔습니다. 화면에서 발견한 문제를 API 응답과 원천 데이터까지 따라가며 원인을 찾고, 필요한 개선을 직접 적용합니다.</p>
+          <p>이미지와 폰트 로딩을 최적화해 LCP를 19.8초에서 2.5초로 줄였습니다. AWS ECS와 CodePipeline으로 프론트엔드 배포를 자동화하고, Playwright 기반 E2E 테스트로 주요 사용자 흐름을 검증하는 환경을 구축했습니다.</p>
+          <p>강의와 멘토링으로 실무 경험을 나누고, 배운 내용은 기술 블로그에 기록합니다. 동료와 지식뿐 아니라 문제의 맥락을 공유하며 더 나은 결과를 만들어가고자 합니다.</p>
+        </div>
+        <nav class="contact-links" aria-label="연락처 및 외부 프로필">
+          <a href="https://github.com/chbaefront" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (새 탭)</span></a>
+          <a href="https://medium.com/@zero86" target="_blank" rel="noopener noreferrer">기술 블로그 <span aria-hidden="true">↗</span><span class="sr-only"> (새 탭)</span></a>
+          <a href="mailto:rebch86@daum.net">rebch86@daum.net <span aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
+
+      <section class="tech-stack" aria-labelledby="tech-title">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">TECH STACK</p>
+          <h2 id="tech-title">사용해 온 기술</h2>
+          <p>서비스 개발과 운영 과정에서 활용한 기술입니다.</p>
+        </div>
+        <div class="tech-stack__groups">
+          <div class="tech-stack__group">
+            <h3>Frontend / State</h3>
+            <ul class="tech-stack__list" aria-label="프론트엔드 및 상태 관리 기술">
+              <li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Zustand</li><li>TanStack Query</li><li>Redux</li><li>Recoil</li><li>React Hook Form</li><li>Zod</li><li>Vue</li><li>Nuxt.js</li><li>Vite</li><li>Turborepo</li>
+            </ul>
+          </div>
+          <div class="tech-stack__group">
+            <h3>Styling / UI</h3>
+            <ul class="tech-stack__list" aria-label="스타일링 및 UI 기술">
+              <li>Tailwind CSS</li><li>Sass / SCSS</li><li>Emotion</li><li>Stitches</li><li>Mantine</li><li>Material UI</li><li>Vuetify</li><li>ApexCharts</li>
+            </ul>
+          </div>
+          <div class="tech-stack__group">
+            <h3>Backend / DB</h3>
+            <ul class="tech-stack__list" aria-label="백엔드 및 데이터베이스 기술">
+              <li>Java</li><li>Spring / Spring Boot</li><li>JPA</li><li>Express</li><li>Nest.js</li><li>Prisma</li><li>PostgreSQL</li><li>MySQL</li>
+            </ul>
+          </div>
+          <div class="tech-stack__group">
+            <h3>DevOps</h3>
+            <ul class="tech-stack__list" aria-label="인프라 및 배포 기술">
+              <li>AWS EC2</li><li>AWS S3</li><li>AWS RDS</li><li>AWS ECS</li><li>AWS CodePipeline</li><li>AWS Fargate</li><li>Docker</li><li>Nginx</li>
+            </ul>
+          </div>
+          <div class="tech-stack__group">
+            <h3>Testing</h3>
+            <ul class="tech-stack__list" aria-label="테스트 기술">
+              <li>Playwright</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" data-site-footer></footer>
   </body>
 </html>

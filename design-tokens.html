@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <title>디자인 토큰 · dev_chb</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/design-tokens.css" />
+    <script type="module" src="./src/design-tokens.js"></script>
+  </head>
+  <body>
+    <header class="site-header" data-site-header></header>
+    <main class="container token-page">
+      <div class="token-page__heading">
+        <p class="section-heading__eyebrow">DESIGN TOKENS</p>
+        <h1>디자인 토큰</h1>
+        <p>포트폴리오에 사용한 색상, 타이포그래피와 뱃지를 확인하세요.</p>
+        <a class="tokens-link" href="./">← 포트폴리오로 돌아가기</a>
+      </div>
+
+      <section class="token-section" aria-labelledby="colors-title">
+        <h2 id="colors-title">색상</h2>
+        <p class="token-section__description">라이트와 다크 테마의 색상을 나란히 비교할 수 있습니다.</p>
+        <div class="token-themes">
+          <section class="token-theme" data-theme="light" aria-labelledby="light-title">
+            <h3 id="light-title">Light</h3>
+            <ul class="color-tokens" data-colors></ul>
+          </section>
+          <section class="token-theme" data-theme="dark" aria-labelledby="dark-title">
+            <h3 id="dark-title">Dark</h3>
+            <ul class="color-tokens" data-colors></ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="token-section" aria-labelledby="badges-title">
+        <h2 id="badges-title">뱃지</h2>
+        <p class="token-section__description">핵심 역량과 기술 스택에 사용하는 두 가지 뱃지입니다. 포트폴리오와 같은 스타일을 적용했습니다.</p>
+        <div class="token-themes">
+          <section class="token-theme" data-theme="light" aria-labelledby="badges-light-title">
+            <h3 id="badges-light-title">Light</h3>
+            <div class="badge-specimen">
+              <h4>핵심 역량</h4>
+              <ul class="introduction__strengths" aria-label="라이트 모드 핵심 역량 뱃지">
+                <li>웹 성능 최적화</li><li>배포 자동화</li><li>E2E 테스트</li>
+              </ul>
+            </div>
+            <div class="badge-specimen">
+              <h4>기술 스택</h4>
+              <ul class="tech-stack__list" aria-label="라이트 모드 기술 스택 뱃지">
+                <li>JavaScript</li><li>TypeScript</li><li>React</li><li>Playwright</li>
+              </ul>
+            </div>
+          </section>
+          <section class="token-theme" data-theme="dark" aria-labelledby="badges-dark-title">
+            <h3 id="badges-dark-title">Dark</h3>
+            <div class="badge-specimen">
+              <h4>핵심 역량</h4>
+              <ul class="introduction__strengths" aria-label="다크 모드 핵심 역량 뱃지">
+                <li>웹 성능 최적화</li><li>배포 자동화</li><li>E2E 테스트</li>
+              </ul>
+            </div>
+            <div class="badge-specimen">
+              <h4>기술 스택</h4>
+              <ul class="tech-stack__list" aria-label="다크 모드 기술 스택 뱃지">
+                <li>JavaScript</li><li>TypeScript</li><li>React</li><li>Playwright</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <dl class="badge-specs">
+          <div><dt>핵심 역량</dt><dd>13px / Medium 500 · Primary 텍스트 · 투명 배경 · 안쪽 여백 6px 12px</dd></div>
+          <div><dt>기술 스택</dt><dd>14px / Regular 400 · 기본 텍스트 · Surface 배경 · 안쪽 여백 7px 12px</dd></div>
+          <div><dt>공통</dt><dd>테두리 1px · 모서리 6px · 뱃지 사이 간격 8px</dd></div>
+        </dl>
+      </section>
+
+      <section class="token-section" aria-labelledby="font-title">
+        <h2 id="font-title">사용 폰트</h2>
+        <div class="font-specimen">
+          <h3>Pretendard</h3>
+          <p class="font-specimen__sample">함께 만드는 더 나은 경험<br />The quick brown fox 0123456789</p>
+          <p>Pretendard v1.3.9 · 기본 대체 글꼴: sans-serif</p>
+        </div>
+      </section>
+
+      <section class="token-section" aria-labelledby="sizes-title">
+        <h2 id="sizes-title">폰트 사이즈</h2>
+        <p class="token-section__description">본문, 제목, 링크와 태그에 사용한 크기입니다. 모바일 소개 제목은 40px, 데스크톱은 56px입니다.</p>
+        <ul class="type-tokens" id="font-sizes"></ul>
+      </section>
+
+      <section class="token-section" aria-labelledby="weights-title">
+        <h2 id="weights-title">폰트 굵기</h2>
+        <ul class="type-tokens" id="font-weights"></ul>
+      </section>
+
+      <section class="token-section" aria-labelledby="roles-title">
+        <h2 id="roles-title">타이포그래피 적용 기준</h2>
+        <div class="type-table-wrap">
+          <table class="type-table">
+            <caption class="sr-only">실제 페이지에 사용된 크기, 굵기, 행간과 자간</caption>
+            <thead><tr><th scope="col">용도</th><th scope="col">크기</th><th scope="col">굵기</th><th scope="col">행간</th><th scope="col">자간</th></tr></thead>
+            <tbody id="type-roles"></tbody>
+          </table>
+        </div>
+      </section>
+      <noscript>디자인 토큰의 전체 목록을 보려면 JavaScript를 활성화해 주세요.</noscript>
+    </main>
+    <footer class="site-footer" data-site-footer></footer>
+  </body>
+</html>

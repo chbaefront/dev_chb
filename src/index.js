@@ -1,5 +1,5 @@
-import { initializeTheme } from './theme.js';
+import { initializeLayout } from './layout.js';
 
 console.log('loaded js..');
 
-initializeTheme();
+initializeLayout();
