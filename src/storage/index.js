@@ -1,0 +1,19 @@
+export function get(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+export function set(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {}
+}
+
+export function remove(key) {
+  try {
+    localStorage.removeItem(key);
+  } catch {}
+}
