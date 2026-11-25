@@ -13,7 +13,7 @@
   <body>
     <header class="site-header" data-site-header></header>
     <main class="container portfolio">
-      <section class="introduction" aria-labelledby="intro-title">
+      <section class="introduction" aria-labelledby="intro-title" data-testid="introduction">
         <p class="introduction__greeting">안녕하세요,</p>
         <h1 id="intro-title">배창현입니다.</h1>
         <p class="introduction__role">문제를 구조적으로 해결하는 6년 차 개발자</p>
@@ -34,7 +34,7 @@
         </nav>
       </section>
 
-      <section class="tech-stack" aria-labelledby="tech-title">
+      <section class="tech-stack" aria-labelledby="tech-title" data-testid="tech-stack">
         <div class="section-heading">
           <p class="section-heading__eyebrow">TECH STACK</p>
           <h2 id="tech-title">사용해 온 기술</h2>
@@ -73,7 +73,8 @@
           </div>
         </div>
       </section>
-      <section class="experience" id="experience" aria-labelledby="experience-title">
+
+      <section class="experience" id="experience" aria-labelledby="experience-title" data-testid="experience">
         <div class="section-heading">
           <p class="section-heading__eyebrow">EXPERIENCE</p>
           <h2 id="experience-title">경력</h2>
@@ -83,40 +84,126 @@
             <p class="timeline__period"><time datetime="2026-06">2026.06</time> — <time datetime="2026-07">2026.07</time></p>
             <h3 class="timeline__company">가이아랩스</h3>
             <p class="timeline__role">개발팀 · 프론트엔드 (프리랜서)</p>
+            <p class="timeline__description">Theia 의원 웹사이트의 성능 개선과 콘텐츠 관리 시스템(CMS) 개발, Aesthe CRM v2의 운영 QA 대응을 담당했습니다.</p>
+            <ul class="timeline__highlights">
+              <li>
+                <h4>이미지·폰트 로딩 병목 개선</h4>
+                <p>Lighthouse로 이미지와 폰트 로딩 병목을 확인하고 WebP 전환과 폰트 로딩을 최적화했습니다. LCP를 19.8초에서 2.5초로, 전체 페이지 용량을 150MB에서 55MB로 줄였으며, 시맨틱 HTML 구조와 llms.txt를 정비했습니다.</p>
+              </li>
+              <li>
+                <h4>운영 방식에 맞춘 CMS 설계</h4>
+                <p>운영자가 제목·URL·설명으로 콘텐츠를 찾을 수 있도록 검색 대상을 정하고, 부분 일치 검색에 PostgreSQL pg_trgm 기반 GIN 인덱스를 적용했습니다. 다국어 콘텐츠는 스키마 변경 비용을 고려해 단일 테이블과 locale 필드로 구성했습니다. Codex로 구현을 보조하고 결과물을 검토·수정했으며, AGENTS.md에 프로젝트 기준을 정리하고 테스트와 인수인계 문서를 작성·검토했습니다.</p>
+              </li>
+              <li>
+                <h4>운영 QA 이슈 대응</h4>
+                <p>Jira에 등록된 CRM 이슈를 재현하고 Codex로 관련 코드와 변경 영향 범위를 분석해 수정했습니다. 수정 후 브라우저에서 화면 동작을 교차 확인하며 해결 여부를 검증했습니다.</p>
+              </li>
+            </ul>
           </li>
           <li class="timeline__item">
             <p class="timeline__period"><time datetime="2025-06">2025.06</time> — <time datetime="2026-02">2026.02</time></p>
             <h3 class="timeline__company">DK Rabbit</h3>
             <p class="timeline__role">개발팀 · 프론트엔드 (프리랜서)</p>
+            <p class="timeline__description">자산 관리 요청 시스템 AMRS의 레거시 유지보수와 리뉴얼 개발을 담당했습니다.</p>
+            <ul class="timeline__highlights">
+              <li>
+                <h4>데이터 불일치 원인 분석과 변환 책임 분리</h4>
+                <p>반복되는 Zod 파싱 오류를 API 응답, 스키마, MongoDB 원천 데이터까지 대조해 기존 데이터의 스키마 불일치를 확인했습니다. 예외 처리만으로는 원인을 해결할 수 없다고 판단해, 계층별 데이터 변환 책임을 나누는 TransferDTO 구조로 점진적으로 개선했습니다.</p>
+              </li>
+              <li>
+                <h4>Playwright E2E 테스트 구축과 안정화</h4>
+                <p>수동 테스트 의존도를 낮추기 위해 핵심 CRUD 흐름을 중심으로 E2E 테스트를 구축했습니다. 불안정한 백엔드 API 응답에 영향을 받던 테스트를 픽스처 기반 모킹으로 전환하고, POM과 Locator 상수화로 구조를 정리했습니다. CI에서는 @smoke 태그로 핵심 시나리오를 선별 실행하고, Codex로 반복 작성을 보조하며 작성 절차를 재사용 가능한 SKILL로 정리했습니다.</p>
+              </li>
+              <li>
+                <h4>공통 패키지 개발 흐름 개선</h4>
+                <p>Turborepo 공통 패키지를 사전 빌드에서 JIT Package 방식으로 전환했습니다. 패키지별 빌드 캐싱과 개발 편의성의 트레이드오프를 고려해 반복 빌드 부담을 줄였습니다.</p>
+              </li>
+            </ul>
           </li>
           <li class="timeline__item">
             <p class="timeline__period"><time datetime="2024-08">2024.08</time> — <time datetime="2025-01">2025.01</time></p>
             <h3 class="timeline__company">엘리스그룹</h3>
             <p class="timeline__role">KDT 교강사 (프리랜서)</p>
+            <p class="timeline__description">React, TypeScript, HTML/CSS 기반의 프론트엔드 이론·실습 강의와 코드 리뷰를 담당했습니다.</p>
+            <ul class="timeline__highlights">
+              <li>
+                <h4>실무 사례를 보완한 강의와 개별 피드백</h4>
+                <p>기존 커리큘럼에 실무 사례가 부족해 별도 학습 자료와 예제를 구성했습니다. 수강생의 이해 수준에 맞춰 클로저, 불변성, 클라이언트·서버 구조 등 핵심 개념을 설명하고, 수업 외 코드 리뷰와 개별 피드백으로 문제 해결 과정과 구현 방향을 함께 검토했습니다.</p>
+              </li>
+            </ul>
           </li>
           <li class="timeline__item">
             <p class="timeline__period"><time datetime="2021-11">2021.11</time> — <time datetime="2023-09">2023.09</time></p>
             <h3 class="timeline__company">아이씨티어스</h3>
             <p class="timeline__role">개발팀 · 프론트엔드</p>
+            <p class="timeline__description">산림조합 쇼핑몰 푸른조합, 유전체 정보 플랫폼 마이지놈박스 MVP, 한성티에스 aspark 백오피스의 프론트엔드 개발을 담당했습니다.</p>
+            <ul class="timeline__highlights">
+              <li>
+                <h4>팀 운영 여건을 고려한 배포 자동화</h4>
+                <p>수동 배포의 반복 작업과 실수 가능성을 줄이기 위해 AWS ECS와 CodePipeline 기반 배포 파이프라인을 구축했습니다. 인프라 전담 인력이 없는 팀의 관리 부담을 고려해 Fargate를 선택하고, Docker 이미지 빌드부터 ECR 등록과 ECS 배포까지 자동화해 프론트엔드 독립 배포 환경을 마련했습니다.</p>
+              </li>
+              <li>
+                <h4>반복 코드와 폼 로직 정리</h4>
+                <p>푸른조합의 중복 코드를 모듈화하고 Native Lazy Loading을 적용해 이미지 로딩 방식을 개선했습니다. aspark 백오피스에는 React Hook Form을 도입해 반복적인 폼 로직을 간소화했습니다.</p>
+              </li>
+            </ul>
           </li>
           <li class="timeline__item">
             <p class="timeline__period"><time datetime="2020-09">2020.09</time> — <time datetime="2021-05">2021.05</time></p>
             <h3 class="timeline__company">헬스엔메디슨</h3>
             <p class="timeline__role">개발팀 · 프론트엔드 리드</p>
+            <p class="timeline__description">펫츠레이팅스, 위들, 위들 아카데미와 hAuth의 웹서비스·백오피스를 개발하고, 프론트엔드 리드를 맡았습니다.</p>
+            <ul class="timeline__highlights">
+              <li>
+                <h4>온보딩과 협업 기준 정비</h4>
+                <p>프론트엔드 개발자 1명의 채용과 온보딩을 주도하고, Notion에 프로젝트 구조와 핵심 로직을 문서화했습니다. 공통 컴포넌트·API 계약·상태 관리는 사전에 협의하고, 개별 화면과 버그 해결은 담당자가 주도하도록 협업 기준을 정리했습니다.</p>
+              </li>
+              <li>
+                <h4>팀 적응 속도를 고려한 TypeScript 전환</h4>
+                <p>신규 팀원의 학습 부담을 고려해 코드베이스가 안정된 뒤 위들 아카데미의 TypeScript 전환을 진행했습니다. UI 컴포넌트에서 API 응답 타입으로 적용 범위를 넓히고, 타입 정의가 없는 외부 SDK는 any로 처리해 전환 속도와 실용성을 고려했습니다. 타입 적용 기준을 공유하고 페어 작업을 진행했으며, Redux에서 Recoil로 상태 관리 구조도 전환했습니다.</p>
+              </li>
+            </ul>
           </li>
           <li class="timeline__item">
             <p class="timeline__period"><time datetime="2018-10">2018.10</time> — <time datetime="2020-02">2020.02</time></p>
             <h3 class="timeline__company">프레시코드</h3>
             <p class="timeline__role">개발팀 · 프론트엔드</p>
+            <p class="timeline__description">프레시코드의 식품 커머스 웹서비스와 백오피스 개발 및 유지보수를 담당했습니다.</p>
+            <ul class="timeline__highlights">
+              <li>
+                <h4>페이지별 검색 정보와 전환 이벤트 구성</h4>
+                <p>모든 페이지에 동일한 메타데이터가 적용되던 문제를 개선하기 위해 Nuxt의 head()로 페이지별 제목·설명·OG 태그를 구성했습니다. GTM과 Facebook Pixel로 상품 조회부터 주문 완료까지의 전환 이벤트를 수집하고, 검색 도구를 등록해 검색 유입과 색인 상태를 확인할 수 있는 기반을 마련했습니다.</p>
+              </li>
+              <li>
+                <h4>기존 주문 흐름에 맞춘 결제 연동</h4>
+                <p>나이스페이와 토스의 SDK 문서 및 기존 주문 흐름을 분석해 결제 요청과 결과 처리를 구현했습니다. Vue를 직접 지원하지 않는 나이스페이 SDK는 전역 스크립트 방식으로 연결하고, 성공·실패·취소에 따른 화면 처리를 주문 흐름에 반영했습니다.</p>
+              </li>
+              <li>
+                <h4>이미지 로딩과 데이터 접근 구조 개선</h4>
+                <p>디자이너와 이미지 크기·적용 방식을 조율하고 리사이징과 Intersection Observer 기반 지연 로딩을 적용해 대표 화면 로딩 시간을 1.8초에서 1.1초로 줄였습니다. API 호출을 별도 모듈로 분리하고 Vuex로 응답 데이터를 관리해 여러 화면에서 재사용할 수 있도록 구성했습니다.</p>
+              </li>
+            </ul>
           </li>
           <li class="timeline__item">
             <p class="timeline__period"><time datetime="2016-06">2016.06</time> — <time datetime="2018-03">2018.03</time></p>
             <h3 class="timeline__company">오직</h3>
             <p class="timeline__role">개발2팀 · 백엔드</p>
+            <p class="timeline__description">Java/Spring 기반의 사용자 접근 시스템, 총회 회계 관리, 종교인 과세 계산기 개발과 유지보수를 담당했습니다.</p>
+            <ul class="timeline__highlights">
+              <li>
+                <h4>Spring Boot 도입과 설정 구조 개선</h4>
+                <p>XML에 정의된 빈 구성과 의존 관계를 파악하기 어려워, 설정을 코드로 명시하고 IDE의 도움을 받을 수 있는 구조가 필요하다고 판단했습니다. Spring Boot 도입을 주도하고 XML 설정을 Java Config로 전환했으며, 운영 중인 서비스에 미치는 영향을 줄이기 위해 기본 설정과 DB 연결부터 계층별로 점진적으로 마이그레이션했습니다.</p>
+              </li>
+              <li>
+                <h4>Angular 4 기술 공유와 사내 논의 참여</h4>
+                <p>JSP 화면만 수정해도 백엔드 변경 여부와 관계없이 애플리케이션 전체를 다시 빌드하고 배포해야 했고, 프론트엔드와 백엔드 각 영역에 적합한 기술을 독립적으로 선택하는 데에도 제약이 있었습니다. 이를 계기로 화면과 서버를 분리하는 구조에 관심을 갖고, 사내 기술 세미나에서 프론트엔드·백엔드 분리의 필요성과 Angular 4를 소개하며 기술 논의에 참여했습니다.</p>
+              </li>
+            </ul>
           </li>
         </ol>
       </section>
-      <section class="portfolio-section" id="open-source" aria-labelledby="open-source-title">
+
+      <section class="portfolio-section" id="open-source" aria-labelledby="open-source-title" data-testid="open-source">
         <div class="section-heading">
           <p class="section-heading__eyebrow">OPEN SOURCE</p>
           <h2 id="open-source-title">오픈소스 기여</h2>
@@ -167,7 +254,7 @@
         </ul>
       </section>
 
-      <section class="portfolio-section" id="activities" aria-labelledby="activities-title">
+      <section class="portfolio-section" id="activities" aria-labelledby="activities-title" data-testid="activities">
         <div class="section-heading">
           <p class="section-heading__eyebrow">ACTIVITIES &amp; MORE</p>
           <h2 id="activities-title">활동 및 기타</h2>

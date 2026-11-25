@@ -441,6 +441,33 @@ body {
   line-height: 1.6;
 }
 
+.timeline__description,
+.timeline__highlights p {
+  margin: 16px 0 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-16);
+  line-height: 1.8;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.timeline__highlights {
+  display: grid;
+  gap: 24px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline__highlights h4 {
+  margin: 0;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.6;
+}
+
+.timeline__highlights p { margin-top: 8px; }
+
 .record-list {
   margin: 32px 0 0;
   padding: 0;
