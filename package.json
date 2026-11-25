@@ -1,0 +1,23 @@
+{
+  "name": "dev_chb",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/chbaefront/dev_chb#readme",
+  "bugs": {
+    "url": "https://github.com/chbaefront/dev_chb/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chbaefront/dev_chb.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "scripts": {
+    "e2e": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.7"
+  }
+}
